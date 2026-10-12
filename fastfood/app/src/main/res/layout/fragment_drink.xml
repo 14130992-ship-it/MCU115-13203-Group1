@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#FFFFFF"
+    android:clickable="true"
+    android:focusable="true">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="選擇飲料"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="24dp"/>
+
+    <RadioGroup
+        android:id="@+id/rgDrink"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="32dp">
+
+        <RadioButton
+            android:id="@+id/rbCola"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="可樂"
+            android:padding="8dp"
+            android:textSize="16sp"/>
+
+        <RadioButton
+            android:id="@+id/rbIcedTea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="冰紅茶"
+            android:padding="8dp"
+            android:textSize="16sp"/>
+
+        <RadioButton
+            android:id="@+id/rbWater"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="水"
+            android:padding="8dp"
+            android:textSize="16sp"/>
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnDoneDrink"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="完成"/>
+
+</LinearLayout>
