@@ -1,6 +1,7 @@
 package com.example.thread
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -11,6 +12,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private val viewModel: TaskViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,5 +37,12 @@ class MainActivity : AppCompatActivity() {
                 else -> ""
             }
         }.attach()
+
+        // 按下 Start 開始工作時，自動切換 ViewPager2 到 Progress 分頁 (Index 1)
+        viewModel.taskState.observe(this) { state ->
+            if (state is TaskState.Preparing) {
+                binding.viewPager.setCurrentItem(1, true)
+            }
+        }
     }
 }
